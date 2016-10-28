@@ -10,14 +10,19 @@ table.columns = {
 
     "title" : "string",
     "author" : "string",
-    "authorID": "string",
-    "status": "string",
     "latitude": "number",
     "longitude": "number",
     "personsScoring": "number",
     "averageScore": "number",
     "imageURL": "string"
 };
+
+table.insert(function (context) {
+    context.item.authorID = context.user.id;
+    context.item.status = "No Publicado";
+    return context.execute();
+});
+
 
 /*
 Permisos de Acceso a tabla
