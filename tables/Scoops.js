@@ -17,11 +17,11 @@ table.columns = {
     "imageURL": "string"
 };
 
-// table.insert(function (context) {
-//     // context.item.authorID = context.user.id;
-//     context.item.status = "No Publicado";
-//     return context.execute();
-// });
+table.insert(function (context) {
+    context.item.authorID = context.user.id;
+    context.item.status = "No Publicado";
+    return context.execute();
+});
 
 
 /*
@@ -31,6 +31,6 @@ Permisos de Acceso a tabla
 table.read.access = 'anonymous';
 table.update.access = 'authenticated';
 table.delete.access = 'authenticated';
-table.insert.access = 'anonymous';
+table.insert.access = 'authenticated';
 
 module.exports = table;
