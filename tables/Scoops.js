@@ -23,8 +23,9 @@ table.columns = {
 Permisos de Acceso a tabla
  */
 
-table.read.access = "authenticated";
-
-
+table.read.access = "anonymous";
+table.update.access = "authenticated";
+table.delete.access = "authenticated";
+table.insert.access = "authenticated";
 
 module.exports = table;
