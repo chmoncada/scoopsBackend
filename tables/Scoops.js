@@ -19,5 +19,12 @@ table.columns = {
     "imageURL": "string"
 };
 
+/*
+Permisos de Acceso a tabla
+ */
+
+table.read.access = "authenticated";
+
+
 
 module.exports = table;
