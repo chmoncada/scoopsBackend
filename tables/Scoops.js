@@ -17,11 +17,11 @@ table.columns = {
     "imageURL": "string"
 };
 
-table.insert(function (context) {
-    // context.item.authorID = context.user.id;
-    context.item.status = "No Publicado";
-    return context.execute();
-});
+// table.insert(function (context) {
+//     // context.item.authorID = context.user.id;
+//     context.item.status = "No Publicado";
+//     return context.execute();
+// });
 
 
 /*
