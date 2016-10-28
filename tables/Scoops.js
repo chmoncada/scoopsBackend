@@ -2,7 +2,7 @@
  * Created by charlesmoncada on 27/10/16.
  */
 
-var azureMobileApps = require("azure-mobile-apps");
+var azureMobileApps = require('azure-mobile-apps');
 
 var table = azureMobileApps.table();
 
@@ -28,7 +28,7 @@ table.columns = {
 Permisos de Acceso a tabla
  */
 
-table.read.access = "anonymous";
+table.read.access = 'anonymous';
 //table.update.access = "authenticated";
 //table.delete.access = "authenticated";
 //table.insert.access = "authenticated";
