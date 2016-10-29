@@ -21,7 +21,7 @@ var api = {
        var containerName = 'scoops';
 
        // storageName
-       var accountName = config.appSettings.STORAGE_ACCOUNT_NAME;
+       var accountName = process.env.STORAGE_ACCOUNT_NAME;
        console.log('account Name: %s',accountName);
 
        // clave de acceso al storage
