@@ -37,7 +37,7 @@ exports.get = function(request, response) {
             console.log('SAS ->' + sasURL);
 
             var sasQueryString = { 'sasUrl' : sasURL.baseUrl + sasURL.path + '?' + qs.stringify(sasURL.queryString) };
-            request.respond(200, sasQueryString);
+            response.send(200, sasQueryString);
         }
     });
 };
