@@ -10,7 +10,7 @@ exports.get = function(request, response) {
 
     // obtain required data from request
     var blobName = request.query.blobName;
-    var containerName = request.query.containerName;
+    var containerName = 'scoops';
 
     // storageName
     var accountName = appSettings.STORAGE_ACCOUNT_NAME;
