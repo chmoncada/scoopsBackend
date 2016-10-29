@@ -46,7 +46,8 @@ var api = {
                console.log('SAS ->' + sasURL);
 
                var sasQueryString = { 'sasUrl' : sasURL.baseUrl + sasURL.path + '?' + qs.stringify(sasURL.queryString) };
-               res.send(200, sasQueryString);
+               console.log('SASQUERYSTRING: %s', sasQueryString);
+               res.json(sasQueryString);
            }
        });
    }
