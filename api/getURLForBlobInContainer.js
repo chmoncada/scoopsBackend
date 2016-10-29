@@ -4,7 +4,7 @@
 
 var azure = require('azure-storage');
 var qs = require('querystring');
-var config = require('mobileservice-config');
+//var config = require('mobileservice-config');
 
 function minutesFromNow(minutes) {
     var date = new Date();
@@ -25,7 +25,7 @@ var api = {
        console.log('account Name: %s',accountName);
 
        // clave de acceso al storage
-       var accountKey = config.appSettings.STORAGE_ACCOUNT_ACCESS_KEY;
+       var accountKey = process.env.STORAGE_ACCOUNT_ACCESS_KEY;
 
        var host = accountName + '.blob.core.windows.net/';
 
