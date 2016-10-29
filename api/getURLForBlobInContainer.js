@@ -17,12 +17,12 @@ var api = {
 
        // obtain required data from request
        var blobName = req.query.blobName;
-       console.log(blobName);
+       console.log('blobname: %s', blobName);
        var containerName = 'scoops';
 
        // storageName
        var accountName = appSettings.STORAGE_ACCOUNT_NAME;
-       console.log(accountName);
+       console.log('account Name: %s',accountName);
 
        // clave de acceso al storage
        var accountKey = appSettings.STORAGE_ACCOUNT_ACCESS_KEY;
