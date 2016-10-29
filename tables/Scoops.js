@@ -9,6 +9,7 @@ var table = azureMobileApps.table();
 table.columns = {
 
     "title" : "string",
+    "scooptext" : "string",
     "author" : "string",
     "latitude": "number",
     "longitude": "number",
