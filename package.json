@@ -1,0 +1,29 @@
+{
+  "name": "scoopsbackend",
+  "version": "1.0.0",
+  "description": "backend of scoops app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chmoncada/scoopsBackend.git"
+  },
+  "keywords": [
+    "backend"
+  ],
+  "author": "Charles Moncada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chmoncada/scoopsBackend/issues"
+  },
+  "homepage": "https://github.com/chmoncada/scoopsBackend#readme",
+  "dependencies": {
+    "azure": "^1.2.0-preview",
+    "azure-mobile-apps": "^3.0.2",
+    "azure-storage": "^1.3.2",
+    "express": "^4.14.0",
+    "mobileservice-config": "^1.0.0"
+  }
+}
