@@ -13,7 +13,7 @@ api = {
         console.log('score: ' + score);
         //var query = "SELECT averageScore, personsScoring, title from scoops where id = '" + idScoop + "'";
         var query = {
-            sql: 'SELECT averageScore, personsScoring, title WHERE id=@id',
+            sql: 'SELECT averageScore, personsScoring, title FROM Scoops WHERE id=@id',
             parameters: [{
                 id: idScoop
             }]
