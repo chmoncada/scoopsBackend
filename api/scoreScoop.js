@@ -24,8 +24,24 @@ api = {
         request.azureMobile.data.execute(query)
             .then(function(results){
                 console.log("**** RESULTADOS DEL QUERY:" + results);
-                console.log(results[0].title)
-                response.json(results)
+                var averageScoreDB = results[0].averageScore;
+                var numberOfScores = results[0].personsScoring;
+
+                var totalScoreDB = averageScoreDB * numberOfScores;
+
+                var newNumberOfScores = numberOfScores + 1;
+                var newTotal = totalScoreDB + score;
+
+                var newAverage = newTotal / newNumberOfScores;
+
+                console.log("el nuevo promedio es: ");
+                console.log(newAverage);
+
+
+                response.json({ status : "EXITO",
+                    nuevoaverage : newAverage
+                })
+
             });
 
     }
