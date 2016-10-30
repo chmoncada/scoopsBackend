@@ -3,8 +3,6 @@
  */
 
 var azure = require('azure-storage');
-var qs = require('querystring');
-//var config = require('mobileservice-config');
 
 function minutesFromNow(minutes) {
     var date = new Date();
@@ -42,7 +40,6 @@ var api = {
                };
 
                var sasToken = blobService.generateSharedAccessSignature(containerName, blobName, sharedAccessPolicy);
-               //var sasToken2 = blobService.generateSharedAccessSignature(containerName, sharedAccessPolicy);
 
                console.log('SAS ->' + sasToken);
 
