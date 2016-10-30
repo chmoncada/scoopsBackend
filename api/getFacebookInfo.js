@@ -41,8 +41,7 @@ api = {
                     myClaim = {name : identity.facebook.claims.name,
                         userId : identity.facebook.claims.nameidentifier,
                         alias: identity.facebook.claims.surname,
-                        provider : "facebook",
-                        picture: identity.facebook.claims.picture
+                        provider : "facebook"
                     };
 
                     //requestIdentityInfoFacebook(identity,res,next);
@@ -62,6 +61,21 @@ api = {
     }
 
 };
+
+// function requestIdentityInfoFacebook(identities, res, next) {
+//
+//     var url = 'https://graph.facebook.com/me?fields=id,name,birthday,hometown,email,picture,gender,friends&access_token=' +
+//         identities.access_token;
+//
+//     console.log('****** ++ llamamos al api graph de Facebook --> ' + url);
+//     var reqParams = { uri: url, headers: { Accept: 'application/json' } };
+//     http.get(reqParams, function (err, resp, body) {
+//         var userData = JSON.parse(body);
+//         console.log('Logado -> ' + JSON.stringify(userData));
+//
+//     });
+//
+// };
 
 api.get.access = 'authenticated';
 
