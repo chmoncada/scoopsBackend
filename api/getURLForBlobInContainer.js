@@ -45,7 +45,7 @@ var api = {
 
                console.log('SAS ->' + sasToken);
 
-               var sasQueryString = { token : sasToken, uri: blobService.getUrl(containerName, blobName, sasToken, true) };
+               var sasQueryString = { token : sasToken, uri: blobService.getUrl(containerName, blobName, sasToken, true), sasURL: blobService.getUrl(containerName, sasToken, true) };
                console.log('SASQUERYSTRING: %s', sasQueryString);
                res.json(sasQueryString);
            }
