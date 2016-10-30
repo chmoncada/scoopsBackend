@@ -11,7 +11,7 @@ api = {
         var idScoop = request.query.idScoop;
         var score = parseInt(request.query.score);
         console.log('score: ' + score);
-        //var query = "SELECT averageScore, personsScoring, title from scoops where id = '" + idScoop + "'";
+
         var query = {
             sql: 'SELECT [averageScore], [personsScoring], [title] FROM [dbo].[Scoops] WHERE ([id]=@id)',
             parameters: [{
@@ -37,6 +37,24 @@ api = {
                 console.log("el nuevo promedio es: ");
                 console.log(newAverage);
 
+                var query = {
+                    sql: 'UPDATE [dbo].[Scoops] SET [averageScore]=@score, [personsScoring]=@numberOfScores  WHERE ([id]=@id)',
+                    parameters: [{
+                        name: "id",
+                        pos: 1,
+                        value: idScoop
+                    },{
+                        name: "score",
+                        value: newAverage
+                    },{
+                        name: "numberOfScores",
+                        value: newNumberOfScores
+                    }]
+                };
+
+                request.azureMobile.data.execute(query).then(function (results) {
+                   console.log("actualizado con exito")
+                });
 
                 response.json({ status : "EXITO",
                     nuevoaverage : newAverage
