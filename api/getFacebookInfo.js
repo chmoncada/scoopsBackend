@@ -17,7 +17,6 @@ api = {
         context.user.getIdentity()
             .then(function (identity) {
 
-                //  var myClaim;
                 if (identity.twitter){
                     console.log('******** Twitter Provider ********');
                     console.log('User Name -> ' + identity.twitter.claims.name + ' ------ ');
@@ -42,7 +41,8 @@ api = {
                     myClaim = {name : identity.facebook.claims.name,
                         userId : identity.facebook.claims.nameidentifier,
                         alias: identity.facebook.claims.surname,
-                        provider : "facebook"
+                        provider : "facebook",
+                        picture: identity.facebook.claims.picture
                     };
 
                     //requestIdentityInfoFacebook(identity,res,next);
@@ -51,9 +51,7 @@ api = {
 
 
                 res.json(myClaim);
-                // context.res.status(200).type('application/json').send(indentity.twitter);
-                //context.res.status(200).type('application/json').send(myClaim);
-                //return (context);
+
             })
             .catch(function (error) {
                 logger.error("Error --> ", error);
@@ -64,21 +62,6 @@ api = {
     }
 
 };
-
-function requestIdentityInfoFacebook(identities, res, next) {
-
-    var url = 'https://graph.facebook.com/me?fields=id,name,birthday,hometown,email,picture,gender,friends&access_token=' +
-        identities.access_token;
-
-    console.log('****** ++ llamamos al api graph de Facebook --> ' + url);
-    var reqParams = { uri: url, headers: { Accept: 'application/json' } };
-    http.get(reqParams, function (err, resp, body) {
-        var userData = JSON.parse(body);
-        console.log('Logado -> ' + JSON.stringify(userData));
-
-    });
-
-}
 
 api.get.access = 'authenticated';
 
