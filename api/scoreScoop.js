@@ -21,7 +21,7 @@ api = {
 
         request.azureMobile.data.execute(query)
             .then(function(results){
-                console.log("**** RESULTADOS DEL QUERY:" + results[0]);
+                console.log("**** RESULTADOS DEL QUERY:" + results);
                 response.json(results)
             });
 
