@@ -11,7 +11,7 @@ api = {
         var idScoop = request.query.idScoop;
         var score = parseInt(request.query.score);
         console.log('score: ' + score);
-        var query = "SELECT averageScore, personsScoring, title FROM scoops WHERE id = '" + idScoop + "'";
+        var query = "SELECT averageScore, personsScoring, title from scoops where id = '" + idScoop + "'";
 
         request.azureMobile.data.execute(query)
             .then(function(results){
