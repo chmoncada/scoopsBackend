@@ -50,9 +50,10 @@ api = {
                 }
 
 
+                res.json(myClaim);
                 // context.res.status(200).type('application/json').send(indentity.twitter);
-                context.res.status(200).type('application/json').send(myClaim);
-                return (context);
+                //context.res.status(200).type('application/json').send(myClaim);
+                //return (context);
             })
             .catch(function (error) {
                 logger.error("Error --> ", error);
