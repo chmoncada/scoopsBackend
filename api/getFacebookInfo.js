@@ -45,7 +45,7 @@ api = {
                         provider : "facebook"
                     };
 
-                    requestIdentityInfoFacebook(identity,res,next);
+                    //requestIdentityInfoFacebook(identity,res,next);
 
                 }
 
