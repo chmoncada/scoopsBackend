@@ -42,11 +42,11 @@ var api = {
                };
 
                var sasToken = blobService.generateSharedAccessSignature(containerName, blobName, sharedAccessPolicy);
-               var sasToken2 = blobService.generateSharedAccessSignature(containerName, sharedAccessPolicy);
+               //var sasToken2 = blobService.generateSharedAccessSignature(containerName, sharedAccessPolicy);
 
                console.log('SAS ->' + sasToken);
 
-               var sasQueryString = { token : sasToken, uri: blobService.getUrl(containerName, blobName, sasToken, true), sasURL: blobService.getUrl(containerName, sasToken2, true) };
+               var sasQueryString = { token : sasToken, uri: blobService.getUrl(containerName, blobName, sasToken, true) };
                console.log('SASQUERYSTRING: %s', sasQueryString);
                res.json(sasQueryString);
            }
